@@ -11,11 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".teach_details_r"></activity>
         <activity android:name=".admin_log_r" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".CreateAdmin" />
         <activity android:name=".TeacherDetails">
@@ -24,6 +20,12 @@
                 android:value="com.example.sliitfeedback.MainActivity" />
         </activity>
         <activity android:name=".MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
     </application>
