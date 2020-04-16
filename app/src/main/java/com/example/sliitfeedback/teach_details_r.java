@@ -2,6 +2,7 @@ package com.example.sliitfeedback;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,6 +27,12 @@ public class teach_details_r extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
+
+            case R.id.teacher_menu_item:
+
+                startActivity(new Intent(this,SearchActivity.class));
+                return true;
+                 
 
             default:
                 return super.onOptionsItemSelected(item);
