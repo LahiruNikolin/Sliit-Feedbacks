@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".teach_details_r"></activity>
+        <activity android:name=".teach_details_r">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.sliitfeedback.MainActivity" />
+        </activity>
         <activity android:name=".admin_log_r" >
 
         </activity>

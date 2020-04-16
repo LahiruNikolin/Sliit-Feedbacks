@@ -3,11 +3,15 @@ package com.example.sliitfeedback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -17,23 +21,34 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+
+
+    private Button teacherBTN;
 
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     private final String TAG ="MainActivity";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        teacherBTN = findViewById(R.id.teacher_list_btn);
+        teacherBTN.setOnClickListener(this);
+
+
         Map<String, Object> user = new HashMap<>();
         user.put("first", "Ada");
         user.put("last", "Lovelace");
         user.put("born", 1815);
 
-
+/*
 
         db.collection("users")
                 .add(user)
@@ -76,6 +91,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+ */
+
+
+    }
+
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId())
+        {
+            case R.id.teacher_list_btn:
+                Log.d(TAG,"CLICKED");
+                startActivity(new Intent(this,teach_details_r.class));
+                break;
+        }
+
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -92,4 +128,5 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }
