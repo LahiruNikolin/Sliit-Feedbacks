@@ -35,16 +35,6 @@
                 android:textSize="17sp"/>
 
             <Button
-
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="75dp"
-                android:layout_weight="1"
-                android:textColor="@color/textColor"
-                android:textSize="16sp"
-                android:text="Filter" />
-
-            <Button
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="75dp"
@@ -57,10 +47,10 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cw3"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="14dp"
             app:cardBackgroundColor="@color/cardView"
             app:cardCornerRadius="10dp"
-            android:layout_marginTop="14dp"
             app:layout_constraintTop_toBottomOf="@id/linearLayout1">
             >
 
@@ -68,9 +58,9 @@
                 android:id="@+id/linearLayout4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="3"
-                android:layout_gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -80,11 +70,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/feedback"
                     android:scaleX="1.4"
                     android:scaleY="1.5"
                     android:tint="@android:color/white"
-                    />
+                    app:srcCompat="@drawable/feedback" />
 
                 <TextView
                     android:id="@+id/tv5"
@@ -93,8 +82,8 @@
                     android:layout_weight="2"
                     android:text="14200 FEEBACKS"
                     android:textAlignment="center"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
 
             </LinearLayout>
 
@@ -103,10 +92,10 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cw1"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="14dp"
             app:cardBackgroundColor="@color/cardView"
             app:cardCornerRadius="10dp"
-            android:layout_marginTop="14dp"
             app:layout_constraintTop_toBottomOf="@id/cw3">
             >
 
@@ -114,9 +103,9 @@
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="3"
-                 android:layout_gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -126,11 +115,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/teacher"
                     android:scaleX="2"
                     android:scaleY="2"
                     android:tint="@android:color/white"
-                    />
+                    app:srcCompat="@drawable/teacher" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -139,8 +127,8 @@
                     android:layout_weight="2"
                     android:text="142 TEACHERS"
                     android:textAlignment="center"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
 
             </LinearLayout>
 
@@ -150,25 +138,24 @@
             android:id="@+id/cw2"
             android:layout_width="match_parent"
 
+            android:layout_height="100dp"
+            android:layout_marginTop="14dp"
             app:cardBackgroundColor="@color/cardView"
             app:cardCornerRadius="10dp"
-            android:layout_marginTop="14dp"
-            app:layout_constraintTop_toBottomOf="@id/cw1"
-            android:layout_height="120dp"
-            >
+            app:layout_constraintTop_toBottomOf="@id/cw1">
 
             <LinearLayout
                 android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal"
+
+
                 android:weightSum="3"
-
-
                 app:layout_constraintEnd_toEndOf="@+id/cw2"
                 app:layout_constraintStart_toStartOf="@+id/cw2"
                 app:layout_constraintTop_toTopOf="@+id/cw2"
-                android:gravity="center"
 
                 >
 
@@ -178,10 +165,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/student"
                     android:scaleX="2"
                     android:scaleY="2"
                     android:tint="@android:color/white"
+                    app:srcCompat="@drawable/student"
 
                     />
 
@@ -192,8 +179,8 @@
                     android:layout_weight="2"
                     android:text="142 STUDENTS"
                     android:textAlignment="center"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
 
             </LinearLayout>
 
