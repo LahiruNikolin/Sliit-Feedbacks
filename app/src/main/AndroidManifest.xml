@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sliitfeedback">
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeachersList"></activity>
+        <activity android:name=".FeedbackTestActivity">
+
+        </activity>
+        <activity android:name=".TeachersList">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.sliitfeedback.MainActivity" />
+        </activity>
         <activity android:name=".SearchActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -22,11 +31,7 @@
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
-        <activity android:name=".teach_details_r">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.sliitfeedback.MainActivity" />
-        </activity>
+        <activity android:name=".teach_details_r"></activity>
         <activity android:name=".admin_log_r" />
         <activity android:name=".CreateAdmin" />
         <activity android:name=".TeacherDetails">

@@ -16,26 +16,5 @@ public class teach_details_r extends AppCompatActivity {
         setContentView(R.layout.activity_teach_details_r);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.teacher_menu, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-
-            case R.id.teacher_menu_item:
-
-                startActivity(new Intent(this,SearchActivity.class));
-                return true;
-                 
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }

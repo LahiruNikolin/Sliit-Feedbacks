@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -60,8 +62,14 @@ public class SearchActivity extends AppCompatActivity {
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
-            if(!query.isEmpty())
-                Log.d(TAG,query);
+            if(!query.isEmpty()){
+                Intent ints = new Intent(getBaseContext(), TeachersList.class);
+                ints.putExtra("search_qry", query);
+                startActivity(ints);
+                finish();
+            }
+
+
         }
     }
 
