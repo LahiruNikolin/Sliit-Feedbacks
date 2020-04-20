@@ -34,11 +34,45 @@ public class GetData {
 
 
 
+        db.collection("teachers")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
 
+                    String name="";
+                    String imgUrl="";
+                    List<TeacherData> tds=new ArrayList<>();
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                //Log.d(TAG, document.getId() + " => " + document.getData());
+                                //  Log.d(TAG, document.getId() + " => " +   document.getData().get("fname"));
+
+                                name=document.getData().get("fname")+" "+document.getData().get("lname");
+                                imgUrl=document.getData().get("image").toString();
+                                // Log.d(TAG,  name);
+
+                                tds.add(new TeacherData(name ,imgUrl));
+
+                               // Log.d(TAG,"here callled");
+
+
+                            }
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                        Log.d(TAG,"out callled");
+                        listener.dataReady(tds);
+
+                    }
+                });
+
+        //Log.d(TAG,  tds.get(1).getName());
+        /*
+
+      */
     }
 
-    public void searchData(String qry){
 
-
-    }
 }
