@@ -1,6 +1,7 @@
 package com.example.sliitfeedback;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,7 +64,8 @@ public class RecyclerAdapter  extends RecyclerView.Adapter<RecyclerAdapter.ViewH
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+
         TextView name;
 
         ImageView iv;
@@ -76,6 +78,17 @@ public class RecyclerAdapter  extends RecyclerView.Adapter<RecyclerAdapter.ViewH
 
             name=itemView.findViewById(R.id.teacher_name);
             iv=itemView.findViewById((R.id.teacherIv));
+            itemView.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View view) {
+
+            int position=getAdapterPosition();
+            TeacherData teacher=teacherDatas.get(position);
+
+            Log.d("clicker",teacher.getDocId());
 
         }
     }
