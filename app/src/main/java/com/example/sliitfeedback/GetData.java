@@ -40,6 +40,7 @@ public class GetData {
 
                     String name="";
                     String imgUrl="";
+                    String docId="";
                     List<TeacherData> tds=new ArrayList<>();
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -51,11 +52,12 @@ public class GetData {
 
                                 name=document.getData().get("fname")+" "+document.getData().get("lname");
                                 imgUrl=document.getData().get("image").toString();
+                                docId=document.getId();
                                 // Log.d(TAG,  name);
 
-                                tds.add(new TeacherData(name ,imgUrl));
+                                tds.add(new TeacherData(name ,imgUrl,docId));
 
-                               // Log.d(TAG,"here callled");
+                               //Log.d(TAG,"here callled");
 
 
                             }
@@ -72,6 +74,36 @@ public class GetData {
         /*
 
       */
+
+
+    }
+
+    public void searchData(String qry){
+
+        db.collection("teachers").orderBy("fname")
+                .startAt(qry)
+                .endAt(qry+"\uf8ff")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+
+                    String name="";
+                    String imgUrl="";
+                    String docId="";
+                    List<TeacherData> tds=new ArrayList<>();
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+
+                        Log.d(TAG,"yah?");
+                        for (DocumentSnapshot doc : queryDocumentSnapshots.getDocuments()) {
+
+                            name=doc.getData().get("fname")+" "+doc.getData().get("lname");
+                            imgUrl=doc.getData().get("image").toString();
+                            docId=doc.getId();
+                          //  Log.d(TAG,  name);
+                            tds.add(new TeacherData(name ,imgUrl,docId));
+                        }
+                        listener.dataReady(tds);
+                    }
+                });
     }
 
 

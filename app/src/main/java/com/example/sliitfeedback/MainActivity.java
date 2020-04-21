@@ -18,6 +18,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,7 +27,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -34,6 +37,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -45,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView initTv;
 
+    public TextView feedbacks,teachers,students;
+    public ProgressBar spinner;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -56,6 +63,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        spinner=findViewById(R.id.progressBar);
+
+        GetDashboadData dataRetriver=new GetDashboadData(this);
+
+
+        feedbacks=findViewById(R.id.feedback_tv);
+        teachers=findViewById(R.id.teachers_tv);
+        students=findViewById(R.id.students_tv);
+        dataRetriver.getDashboardData();
+
 
         teacherBTN = findViewById(R.id.teacher_list_btn);
         teacherBTN.setOnClickListener(this);
@@ -101,6 +118,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                                 }
+
+
                             } else {
                                 Log.d(TAG, "No such document");
                             }
@@ -226,6 +245,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     initTv.setBackgroundColor(ResourcesCompat.getColor(getResources(),R.color.initColor, null));
 
                                 }
+
+
                             } else {
                                 Log.d(TAG, "No such document");
                             }
@@ -253,6 +274,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void populateFeedbackTv(int count){
+
+    }
+
+    public void populateTeachersTv(int count){
+
+    }
+
+    public void populateStudentTv(int count){
+
     }
 
 }

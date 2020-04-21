@@ -4,10 +4,12 @@ public class TeacherData {
 
     private String name;
     private String img;
+    private String docId;
 
-    public TeacherData(String name, String img) {
+    public TeacherData(String name, String img, String docId) {
         this.name = name;
         this.img = img;
+        this.docId = docId;
     }
 
     public String getName() {
@@ -24,5 +26,13 @@ public class TeacherData {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getDocId() {
+        return docId;
+    }
+
+    public void setDocId(String docId) {
+        this.docId = docId;
     }
 }
