@@ -94,7 +94,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -119,7 +119,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/Password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -143,7 +143,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/ConPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -158,7 +158,7 @@
 
             <Button
                 android:layout_marginTop="30dp"
-                android:id="@+id/button4"
+                android:id="@+id/Register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -169,5 +169,17 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MainLay"
+        tools:visibility="invisible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
