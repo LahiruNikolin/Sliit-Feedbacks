@@ -85,7 +85,7 @@ public class TeacherDetails extends AppCompatActivity {
 
 
                             } else {
-                                Log.d(TAG, "No such document");
+                                Log.d(TAG, "  document doesn't exist");
                             }
                         } else {
                             Log.d(TAG, "get failed with ", task.getException());
