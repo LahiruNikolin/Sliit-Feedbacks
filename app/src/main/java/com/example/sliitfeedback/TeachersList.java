@@ -58,7 +58,7 @@ public class TeachersList extends AppCompatActivity {
             downloadDatas.searchData(qry);
 
 
-           // Log.d(TAG,ob.toString());
+
 
         }
         else{
