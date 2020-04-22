@@ -50,7 +50,6 @@
                 android:value="com.example.sliitfeedback.MainActivity" />
         </activity>
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
