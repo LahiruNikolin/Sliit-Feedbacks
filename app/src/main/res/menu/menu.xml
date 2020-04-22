@@ -4,5 +4,10 @@
 
     <item android:title="Dashboard"/>
 
-    <item android:title="Logout" />
+    <item
+        android:id="@+id/logout_btn"
+        android:title="Logout" />
+    <item
+        android:id="@+id/menu_exit"
+        android:title="@string/Exit" />
 </menu>
