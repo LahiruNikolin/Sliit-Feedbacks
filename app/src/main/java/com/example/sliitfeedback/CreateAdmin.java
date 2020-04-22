@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,15 +15,25 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CreateAdmin extends AppCompatActivity {
+    public static final String TAG = "TAG";
+    public static final String  tag = TAG;
     EditText Email,Password,ConPassword;
     Button CreateAdmin;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
+    FirebaseFirestore fstore;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,20 +44,19 @@ public class CreateAdmin extends AppCompatActivity {
         Password = findViewById(R.id.Password);
         ConPassword = findViewById(R.id.ConPassword);
         CreateAdmin = findViewById(R.id.Register);
+        progressBar = findViewById(R.id.progressBar);
 
         fAuth = FirebaseAuth.getInstance();
-
-        progressBar = findViewById(R.id.progressBar);
+        fstore = FirebaseFirestore.getInstance();
 
         if(fAuth.getCurrentUser()!=null){
             startActivity(new Intent(getApplicationContext(),MainActivity.class ));
-            finish();
         }
 
         CreateAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = Email.getText().toString().trim();
+                final String email = Email.getText().toString().trim();
                 String password = Password.getText().toString().trim();
                 String conPW = ConPassword.getText().toString().trim();
 
@@ -62,8 +72,8 @@ public class CreateAdmin extends AppCompatActivity {
                     Password.setError("Password must be above 6 characters");
                     return;
                 }
-                if (password != conPW) {
-                    Password.setError("Password doesn't match");
+                if (password == conPW) {
+                    ConPassword.setError("Password doesn't match");
                     return;
                 }
 
@@ -74,12 +84,22 @@ public class CreateAdmin extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(CreateAdmin.this, "User Created...", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class ));
+                            userID = fAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = fstore.collection("admin").document(userID);
+                            Map<String,Object> admin = new HashMap<>();
+                            admin.put("Email",email);
+                            documentReference.set(admin).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG, "onSuccess: User profile is created");
+                                }
+                            });
+                            startActivity(new Intent(getApplicationContext(),AdminProfileR.class ));
 
 
                         }else{
                             Toast.makeText(CreateAdmin.this, "Eror !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
 
