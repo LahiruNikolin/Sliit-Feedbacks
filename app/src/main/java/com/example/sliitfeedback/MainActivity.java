@@ -271,9 +271,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Handle item selection
         switch (item.getItemId()) {
 
+            case R.id.logout_btn:
+
+
+                if(android.os.Build.VERSION.SDK_INT>=21)
+                    finishAndRemoveTask();
+                else
+                    this.finishAffinity();
+
+               // Log.d(TAG,String.valueOf(k));
+
+                //
+
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
+
     }
 
     public void populateFeedbackTv(int count){
