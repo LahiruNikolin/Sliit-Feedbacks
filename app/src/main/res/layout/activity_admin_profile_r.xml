@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".AdminProfileR">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="207dp"
+        android:layout_height="72dp"
+        android:layout_weight="1"
+        android:text="Admin"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/teacher_list_btn2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/teacher_list_btn2"
+        android:layout_width="212dp"
+        android:layout_height="72dp"
+        android:layout_weight="1"
+        android:text="Teachers"
+        android:textColor="@color/textColor"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
+
     <TextView
         android:id="@+id/textView18"
         android:layout_width="190dp"
@@ -48,6 +71,17 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/CreateAdminBtn"
+        android:layout_width="171dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="552dp"
+        android:text="Create Admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

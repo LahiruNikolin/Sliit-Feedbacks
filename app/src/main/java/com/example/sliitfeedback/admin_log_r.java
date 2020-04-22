@@ -31,9 +31,9 @@ public class admin_log_r extends AppCompatActivity {
 
         Email = findViewById(R.id.email);
         Password = findViewById(R.id.password);
-        loginBtn = findViewById(R.id.Login);
         progressBar = findViewById(R.id.progressBar);
         fAuth = FirebaseAuth.getInstance();
+        loginBtn = findViewById(R.id.Login);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
