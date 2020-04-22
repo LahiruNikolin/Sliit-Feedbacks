@@ -129,51 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 });
 
-/*
 
-        db.collection("users")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
-
-        Map<String, Object> user1 = new HashMap<>();
-        user1.put("first", "Alan");
-        user1.put("middle", "Mathison");
-        user1.put("last", "Turing");
-        user1.put("born", 1912);
-
-        db.collection("users")
-                .add(user1)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
-
-        Log.d(TAG,db.collection("users").getPath());
-
-    }
-
-
-
- */
 
 
     }
@@ -202,13 +158,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void notifyStudents() {
 
 
-
-/*
-        db.collection("flags")
-                .document("svDqsKxgDCFqn3lJWB29")
-                .set(mp);
-
- */
 
         db.collection("flags")
                 .document("svDqsKxgDCFqn3lJWB29")
@@ -294,16 +243,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void populateFeedbackTv(int count){
 
-    }
-
-    public void populateTeachersTv(int count){
-
-    }
-
-    public void populateStudentTv(int count){
-
-    }
 
 }
