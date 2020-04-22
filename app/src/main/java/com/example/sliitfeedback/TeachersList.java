@@ -48,7 +48,7 @@ public class TeachersList extends AppCompatActivity {
         recyclerView=findViewById(R.id.rec_teacher_list);
         spinner=findViewById(R.id.progressBar2);
         GetData downloadDatas=new GetData(this);
-        tds=new ArrayList<>();
+
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -56,9 +56,6 @@ public class TeachersList extends AppCompatActivity {
             qry = qry.substring(0, 1).toUpperCase() + qry.substring(1);
 
             downloadDatas.searchData(qry);
-
-
-
 
         }
         else{
