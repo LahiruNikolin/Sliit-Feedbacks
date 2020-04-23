@@ -29,7 +29,7 @@ public class CreateAdmin extends AppCompatActivity {
     public static final String TAG = "TAG";
     public static final String  tag = TAG;
     EditText Email,Password,ConPassword;
-    Button CreateAdmin;
+    Button CreateAdmin,teacher,admin;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
     FirebaseFirestore fstore;
@@ -45,6 +45,8 @@ public class CreateAdmin extends AppCompatActivity {
         ConPassword = findViewById(R.id.ConPassword);
         CreateAdmin = findViewById(R.id.Register);
         progressBar = findViewById(R.id.progressBar);
+        teacher = findViewById(R.id.teacher_list_btn);
+        admin = findViewById(R.id.Admin);
 
         fAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
@@ -107,9 +109,23 @@ public class CreateAdmin extends AppCompatActivity {
 
             }
         });
+        teacher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),teach_details_r.class));
+            }
+        });
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),AdminProfileR.class));
+            }
+        });
 
 
 
 
     }
 }
+
+
