@@ -233,6 +233,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.logout_btn:
 
+                startActivity(new Intent(this,admin_log_r.class));
                 finish();
 
                 return true;

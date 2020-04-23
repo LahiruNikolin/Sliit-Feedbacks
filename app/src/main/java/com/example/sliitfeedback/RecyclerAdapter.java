@@ -1,6 +1,7 @@
 package com.example.sliitfeedback;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -88,7 +89,12 @@ public class RecyclerAdapter  extends RecyclerView.Adapter<RecyclerAdapter.ViewH
             int position=getAdapterPosition();
             TeacherData teacher=teacherDatas.get(position);
 
-            Log.d("clicker",teacher.getDocId());
+            //Log.d("clicker",teacher.getDocId());
+
+            Intent intent = new Intent(view.getContext(), TeacherDetails.class);
+            intent.putExtra("TID", teacher.getDocId());
+            view.getContext().startActivity(intent);
+
 
         }
     }

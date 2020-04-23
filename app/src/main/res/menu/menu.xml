@@ -2,7 +2,9 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Dashboard"/>
+    <item
+        android:id="@+id/main_act"
+        android:title="Dashboard" />
 
     <item
         android:id="@+id/logout_btn"

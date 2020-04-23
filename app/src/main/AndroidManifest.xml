@@ -54,7 +54,7 @@
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.sliitfeedback.MainActivity" />
+                android:value="com.example.sliitfeedback.TeachersList" />
         </activity>
         <activity android:name=".MainActivity">
 
