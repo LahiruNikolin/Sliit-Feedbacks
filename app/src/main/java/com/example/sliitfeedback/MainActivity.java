@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    private Button teacherBTN;
+    private Button teacherBTN,adminBtn;
 
     private ImageButton init;
 
@@ -73,7 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         students=findViewById(R.id.students_tv);
         dataRetriver.getDashboardData();
 
-
+        adminBtn = findViewById(R.id.goto_admin);
+        adminBtn.setOnClickListener(this);
         teacherBTN = findViewById(R.id.teacher_list_btn);
         teacherBTN.setOnClickListener(this);
         init=findViewById(R.id.init_btn);
@@ -143,6 +144,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.teacher_list_btn:
                 Log.d(TAG,"CLICKED");
                 startActivity(new Intent(this,TeachersList.class));
+                break;
+
+            case R.id.goto_admin:
+                Log.d(TAG,"ADMIN CLICKED");
+                startActivity(new Intent(this,AdminProfileR.class));
                 break;
 
             case R.id.init_btn:
