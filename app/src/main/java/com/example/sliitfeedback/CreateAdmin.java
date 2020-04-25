@@ -96,7 +96,7 @@ public class CreateAdmin extends AppCompatActivity {
                                     Log.d(TAG, "onSuccess: User profile is created");
                                 }
                             });
-                            startActivity(new Intent(getApplicationContext(),AdminProfileR.class ));
+                            startActivity(new Intent(getApplicationContext(),MainActivity.class ));
 
 
                         }else{

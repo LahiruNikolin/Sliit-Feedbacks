@@ -36,7 +36,14 @@
 
 
 
-        <activity android:name=".admin_log_r" />
+        <activity android:name=".admin_log_r" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
 
         <activity android:name=".CreateAdmin" />
 
@@ -50,11 +57,7 @@
                 android:value="com.example.sliitfeedback.TeachersList" />
         </activity>
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
     </application>
