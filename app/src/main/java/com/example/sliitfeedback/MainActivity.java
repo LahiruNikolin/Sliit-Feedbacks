@@ -229,10 +229,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.menu_exit:
 
 
-                if(android.os.Build.VERSION.SDK_INT>=21)
-                    finishAndRemoveTask();
-                else
-                    this.finishAffinity();
+                finishAffinity();
+
+                System.exit(0);
 
 
                 return true;

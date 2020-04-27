@@ -3,4 +3,6 @@
     <string name="title_activity_search">SearchActivity</string>
     <string name="search_label">Search</string>
     <string name="Exit">Exit</string>
+    <string name="lecturers">Lecturers</string>
+    <string name="loading">Loading...</string>
 </resources>
