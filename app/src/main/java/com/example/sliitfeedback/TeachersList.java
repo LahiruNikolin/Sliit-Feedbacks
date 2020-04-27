@@ -16,6 +16,8 @@ import android.widget.ProgressBar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -56,6 +58,11 @@ public class TeachersList extends AppCompatActivity {
             qry = qry.substring(0, 1).toUpperCase() + qry.substring(1);
 
             downloadDatas.searchData(qry);
+
+            Snackbar snackbar = Snackbar.make(recyclerView.getRootView(),"Showing results for "+qry, BaseTransientBottomBar.LENGTH_LONG);
+
+
+            snackbar.show();
 
         }
         else{
