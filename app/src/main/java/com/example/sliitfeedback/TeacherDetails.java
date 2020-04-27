@@ -92,6 +92,8 @@ public class TeacherDetails extends AppCompatActivity {
                 startActivity(new Intent(this,admin_log_r.class));
                 finish();
 
+                return true;
+
             case R.id.main_act:
                 startActivity(new Intent(this,MainActivity.class));
                 finish();
@@ -234,7 +236,5 @@ public class TeacherDetails extends AppCompatActivity {
 
     }
 
-    public void getNumOfRatings(){
 
-    }
 }
