@@ -12,8 +12,11 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            >
 
             <ImageView
                 android:id="@+id/teacherIv"
@@ -22,7 +25,10 @@
 
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="8dp"
-                app:srcCompat="@drawable/w" />
+                app:srcCompat="@drawable/w"
+                android:scaleType="centerCrop"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"/>
 
             <TextView
                 android:id="@+id/teacher_name"
