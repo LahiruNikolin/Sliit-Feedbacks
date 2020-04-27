@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="17sp"
-                    android:text="Mrs.Poornika" />
+                    android:text="" />
             </TableRow>
 
             <TableRow
@@ -89,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="p@gmail.com"
+                    android:text=""
                     android:textSize="17sp" />
             </TableRow>
 
@@ -134,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4.4 out of 5"
+                    android:text=""
                     android:textSize="17sp"/>
 
             </TableRow>
@@ -157,7 +157,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="213"
+                    android:text=""
                     android:textSize="17sp"/>
 
             </TableRow>

@@ -32,8 +32,6 @@
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
-        <activity android:name=".teach_details_r"></activity>
-
 
 
         <activity android:name=".admin_log_r" >

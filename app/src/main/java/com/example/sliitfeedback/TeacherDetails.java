@@ -26,6 +26,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.squareup.picasso.Picasso;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -166,6 +167,61 @@ public class TeacherDetails extends AppCompatActivity {
 
                             }
                             Subjects.setText(subs);
+                            getNumOfFeedbacks();
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+
+
+
+                    }
+                });
+
+      //
+    }
+
+    public void getNumOfFeedbacks(){
+
+        db.collection("feedbacks")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
+
+                    int count=0;
+                    double score=0;
+
+                    //List<Integer> score=new ArrayList<>();
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                if(document.getData().get("teacher_id").toString().equals(teacherID)) {
+                                   count++;
+                                    double mark=Double.parseDouble(document.getData().get("score").toString());
+                                    score+=mark;
+                                    // Log.d(TAG, document.getData().get("name").toString());
+                                   // Log.d(TAG, document.getData().get("score").toString());
+
+                                }
+
+                            }
+                            TotalFB.setText(String.valueOf(count));
+                            double rating=(score/count)/4.0;
+
+
+                            if(Double.isNaN(rating)){
+
+                                Rating.setText("No Ratings yet");
+                            }
+                            else{
+                               // Rating.setText(String.valueOf(rating)+" out of 5");
+                                Rating.setText(new DecimalFormat("#.##").format(rating)+" out of 5");
+                            }
+
+                            Log.d(TAG, String.valueOf(score));
+
                         } else {
                             Log.w(TAG, "Error getting documents.", task.getException());
                         }
@@ -176,7 +232,9 @@ public class TeacherDetails extends AppCompatActivity {
                 });
 
 
+    }
 
+    public void getNumOfRatings(){
 
     }
 }
