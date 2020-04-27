@@ -48,7 +48,11 @@
         <activity android:name=".CreateAdmin" />
 
 
-        <activity android:name=".AdminProfileR"/>
+        <activity android:name=".AdminProfileR">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.sliitfeedback.MainActivity" />
+        </activity>
 
         <activity android:name=".TeacherDetails">
 

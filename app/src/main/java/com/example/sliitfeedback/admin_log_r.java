@@ -67,7 +67,7 @@ public class admin_log_r extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(admin_log_r.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), AdminProfileR.class));
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
 
                         } else {

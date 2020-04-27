@@ -50,11 +50,11 @@ public class CreateAdmin extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
-
+/*
         if(fAuth.getCurrentUser()!=null){
             startActivity(new Intent(getApplicationContext(),MainActivity.class ));
         }
-
+*/
         CreateAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +112,7 @@ public class CreateAdmin extends AppCompatActivity {
         teacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),teach_details_r.class));
+                startActivity(new Intent(getApplicationContext(),TeachersList.class));
             }
         });
         admin.setOnClickListener(new View.OnClickListener() {
