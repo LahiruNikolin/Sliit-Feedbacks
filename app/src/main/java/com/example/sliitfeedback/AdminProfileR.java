@@ -43,6 +43,7 @@ public class AdminProfileR extends AppCompatActivity {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                 Email.setText(documentSnapshot.getString("Email"));
+
             }
         });
 

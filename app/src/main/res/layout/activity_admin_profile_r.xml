@@ -44,11 +44,11 @@
         android:id="@+id/email"
         android:layout_width="267dp"
         android:layout_height="52dp"
-        android:layout_marginTop="476dp"
-        android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        android:layout_marginTop="484dp"
+        android:text="aaaaaaaaaaaaaaaaaaaa"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintHorizontal_bias="0.979"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
