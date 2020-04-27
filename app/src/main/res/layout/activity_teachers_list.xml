@@ -8,6 +8,16 @@
     android:layout_height="match_parent"
     tools:context=".TeachersList">
 
+    <TextView
+        android:id="@+id/teacher_list_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textAlignment="center"
+       android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+         />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_teacher_list"
         android:layout_width="match_parent"

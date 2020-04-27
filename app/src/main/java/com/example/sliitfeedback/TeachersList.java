@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -39,6 +40,7 @@ public class TeachersList extends AppCompatActivity {
     private ProgressBar spinner;
 
     private List<TeacherData> tds;
+    private TextView resultTv;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -49,6 +51,7 @@ public class TeachersList extends AppCompatActivity {
 
         recyclerView=findViewById(R.id.rec_teacher_list);
         spinner=findViewById(R.id.progressBar2);
+        resultTv=findViewById(R.id.teacher_list_tv);
         GetData downloadDatas=new GetData(this);
 
 
@@ -106,6 +109,10 @@ public class TeachersList extends AppCompatActivity {
     public void dataReady(List<TeacherData> tds){
 
        // Log.d(TAG,"got data");
+        if(tds.isEmpty())
+            resultTv.setText("No Matching Lecturers");
+
+
         this.tds=tds;
 
         recyclerAdapter=new RecyclerAdapter(this,tds);

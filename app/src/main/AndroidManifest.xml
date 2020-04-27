@@ -23,7 +23,7 @@
         <activity android:name=".SearchActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.sliitfeedback.teach_details_r" />
+                android:value="com.example.sliitfeedback.TeachersList" />
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
