@@ -39,8 +39,7 @@ public class GetDashboadData {
 
                                 teacherCount++;
 
-                                Log.d(TAG,document.getId());
-
+                               // Log.d(TAG,document.getId());
 
 
                             }
